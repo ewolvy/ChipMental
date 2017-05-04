@@ -1,13 +1,15 @@
-package com.mooo.ewolvy.chipmental;
+package com.mooo.ewolvy.chipmental.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ListActivity extends AppCompatActivity {
+import com.mooo.ewolvy.chipmental.R;
+
+public class EditActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
+        setContentView(R.layout.activity_edit);
     }
 }

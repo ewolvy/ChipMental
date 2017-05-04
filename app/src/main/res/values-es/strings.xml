@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Chip mental</string>
+    <string name="label_growing">Pensamiento de crecimiento</string>
+    <string name="label_limiting">Pensamiento limitante</string>
+</resources>
