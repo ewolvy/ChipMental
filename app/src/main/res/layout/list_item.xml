@@ -21,6 +21,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:id="@+id/im_arrow"
         android:src="@drawable/ic_trending_flat_black_36dp"
         android:contentDescription="@string/app_name"/>
     <TextView

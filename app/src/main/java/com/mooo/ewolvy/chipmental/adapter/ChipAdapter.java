@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mooo.ewolvy.chipmental.R;
@@ -16,6 +17,16 @@ public class ChipAdapter extends RecyclerView.Adapter<ChipAdapter.ChipHolder>{
 
     private List<ListItem> listData;
     private LayoutInflater inflater;
+
+    private ItemClickCallback itemClickCallback;
+
+    public interface ItemClickCallback{
+        void onItemClick(int p);
+    }
+
+    public void setItemClickCallback (final ItemClickCallback itemClickCallback){
+        this.itemClickCallback = itemClickCallback;
+    }
 
     public ChipAdapter(List<ListItem> listData, Context c){
         this.inflater = LayoutInflater.from(c);
@@ -40,9 +51,11 @@ public class ChipAdapter extends RecyclerView.Adapter<ChipAdapter.ChipHolder>{
         return listData.size();
     }
 
-    class ChipHolder extends RecyclerView.ViewHolder{
+    class ChipHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+
         private TextView limiting;
         private TextView growing;
+        private ImageView arrow;
         private View container;
 
         public ChipHolder(View itemView) {
@@ -50,7 +63,14 @@ public class ChipAdapter extends RecyclerView.Adapter<ChipAdapter.ChipHolder>{
 
             limiting = (TextView) itemView.findViewById(R.id.txt_limitating);
             growing = (TextView) itemView.findViewById(R.id.txt_growing);
+            arrow = (ImageView) itemView.findViewById(R.id.im_arrow);
             container = itemView.findViewById(R.id.cont_item_root);
+            container.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            itemClickCallback.onItemClick(getAdapterPosition());
         }
     }
 }
