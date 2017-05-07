@@ -16,6 +16,7 @@
         android:textSize="18sp"
         android:gravity="center_vertical|start"
         android:id="@+id/txt_limitating"
+        android:transitionName="@string/transition_limiting"
         tools:text="Lorem Ipsum"/>
     <ImageView
         android:layout_width="0dp"
@@ -31,6 +32,7 @@
         android:textSize="18sp"
         android:gravity="center_vertical|end"
         android:id="@+id/txt_growing"
+        android:transitionName="@string/transition_growing"
         tools:text="Ipsum Lorem"/>
 
 </LinearLayout>

@@ -2,4 +2,7 @@
     <string name="app_name">Mental chip</string>
     <string name="label_limiting">Limiting thought</string>
     <string name="label_growing">Growing thought</string>
+
+    <string name="transition_limiting" translatable="false">limiting</string>
+    <string name="transition_growing" translatable="false">growing</string>
 </resources>

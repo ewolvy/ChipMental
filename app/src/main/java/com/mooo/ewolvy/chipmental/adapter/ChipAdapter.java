@@ -21,7 +21,7 @@ public class ChipAdapter extends RecyclerView.Adapter<ChipAdapter.ChipHolder>{
     private ItemClickCallback itemClickCallback;
 
     public interface ItemClickCallback{
-        void onItemClick(int p);
+        void onItemClick(View v, int p);
     }
 
     public void setItemClickCallback (final ItemClickCallback itemClickCallback){
@@ -70,7 +70,7 @@ public class ChipAdapter extends RecyclerView.Adapter<ChipAdapter.ChipHolder>{
 
         @Override
         public void onClick(View v) {
-            itemClickCallback.onItemClick(getAdapterPosition());
+            itemClickCallback.onItemClick(v, getAdapterPosition());
         }
     }
 }

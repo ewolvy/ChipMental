@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edit_limiting"
+        android:transitionName="@string/transition_limiting"
         android:inputType="text"
         android:hint="@string/label_limiting"/>
     <TextView
@@ -28,6 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/edit_growing"
+        android:transitionName="@string/transition_growing"
         android:inputType="text"
         android:hint="@string/label_growing"/>
 </LinearLayout>
