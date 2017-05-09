@@ -20,13 +20,8 @@ public class ThoughtsDBHelper extends SQLiteOpenHelper{
             "DROP TABLE IF EXISTS " + ThoughtsDBContract.Thoughts.TABLE_NAME;
 
 
-    public ThoughtsDBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
-    }
-
-    @Override
-    public void onOpen(SQLiteDatabase db) {
-        super.onOpen(db);
+    public ThoughtsDBHelper(Context context) {
+        super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
@@ -36,6 +31,6 @@ public class ThoughtsDBHelper extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        // This is the first versino, so there is nothing to upgrade
     }
 }
