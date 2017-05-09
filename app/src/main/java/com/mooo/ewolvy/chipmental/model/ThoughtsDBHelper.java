@@ -31,6 +31,6 @@ public class ThoughtsDBHelper extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // This is the first versino, so there is nothing to upgrade
+        // This is the first version, so there is nothing to upgrade
     }
 }

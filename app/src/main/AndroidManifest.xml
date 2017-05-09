@@ -17,10 +17,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.EditActivity" />
-        <provider
-            android:name=".model.ThoughtsDBProvider"
-            android:authorities="com.mooo.ewolvy.chipmental"
-            android:exported="false" />
     </application>
 
 </manifest>

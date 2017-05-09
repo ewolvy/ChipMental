@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mooo.ewolvy.chipmental.R;
@@ -55,7 +54,6 @@ public class ChipAdapter extends RecyclerView.Adapter<ChipAdapter.ChipHolder>{
 
         private TextView limiting;
         private TextView growing;
-        private ImageView arrow;
         private View container;
 
         public ChipHolder(View itemView) {
@@ -63,7 +61,6 @@ public class ChipAdapter extends RecyclerView.Adapter<ChipAdapter.ChipHolder>{
 
             limiting = (TextView) itemView.findViewById(R.id.txt_limitating);
             growing = (TextView) itemView.findViewById(R.id.txt_growing);
-            arrow = (ImageView) itemView.findViewById(R.id.im_arrow);
             container = itemView.findViewById(R.id.cont_item_root);
             container.setOnClickListener(this);
         }

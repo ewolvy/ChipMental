@@ -35,7 +35,7 @@ public class ListActivity extends AppCompatActivity implements ChipAdapter.ItemC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        listData = (ArrayList) ChipData.getListData();
+        listData = (ArrayList) ChipData.getListData(this);
 
         recView = (RecyclerView) findViewById(R.id.rec_list);
         recView.setLayoutManager(new LinearLayoutManager(this));
@@ -70,6 +70,9 @@ public class ListActivity extends AppCompatActivity implements ChipAdapter.ItemC
     }
 
     private void moveItem (int oldPos, int newPos){
+        if (oldPos == newPos) {
+            return;
+        }
         ListItem item = (ListItem) listData.get(oldPos);
         listData.remove(oldPos);
         listData.add(newPos, item);
