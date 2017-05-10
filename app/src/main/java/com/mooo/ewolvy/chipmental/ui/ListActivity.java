@@ -2,6 +2,7 @@ package com.mooo.ewolvy.chipmental.ui;
 
 import android.content.Intent;
 import android.os.Build;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
@@ -12,8 +13,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.transition.Fade;
 import android.view.View;
-import android.widget.TextView;
-
 import com.mooo.ewolvy.chipmental.R;
 import com.mooo.ewolvy.chipmental.adapter.ChipAdapter;
 import com.mooo.ewolvy.chipmental.model.ChipData;
@@ -27,7 +26,6 @@ public class ListActivity extends AppCompatActivity implements ChipAdapter.ItemC
     private static final String GROWING = "GROWING";
     private static final String BUNDLE_EXTRAS = "BUNDLE_EXTRAS";
 
-    private RecyclerView recView;
     private ChipAdapter adapter;
     private ArrayList listData;
 
@@ -36,9 +34,25 @@ public class ListActivity extends AppCompatActivity implements ChipAdapter.ItemC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(ListActivity.this, EditActivity.class);
+
+                Bundle extras = new Bundle();
+                extras.putString(LIMITING, "");
+                extras.putString(GROWING, "");
+
+                i.putExtra(BUNDLE_EXTRAS, extras);
+
+                startActivity(i);
+            }
+        });
+
         listData = (ArrayList) ChipData.getListData(this);
 
-        recView = (RecyclerView) findViewById(R.id.rec_list);
+        RecyclerView recView = (RecyclerView) findViewById(R.id.rec_list);
         recView.setLayoutManager(new LinearLayoutManager(this));
 
         adapter = new ChipAdapter(listData, this);
