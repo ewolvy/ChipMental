@@ -5,9 +5,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class ThoughtsDBHelper extends SQLiteOpenHelper{
-    public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "Thoughts.db";
+class ThoughtsDBHelper extends SQLiteOpenHelper{
+    private static final int DATABASE_VERSION = 1;
+    private static final String DATABASE_NAME = "Thoughts.db";
 
     private static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + ThoughtsDBContract.Thoughts.TABLE_NAME + " (" +
@@ -20,7 +20,7 @@ public class ThoughtsDBHelper extends SQLiteOpenHelper{
             "DROP TABLE IF EXISTS " + ThoughtsDBContract.Thoughts.TABLE_NAME;
 
 
-    public ThoughtsDBHelper(Context context) {
+    ThoughtsDBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

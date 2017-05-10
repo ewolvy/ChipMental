@@ -4,7 +4,7 @@ import android.content.ContentResolver;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
-public final class ThoughtsDBContract {
+final class ThoughtsDBContract {
 
     // To avoid instantiating this class we create an empty constructor
     private ThoughtsDBContract(){}
@@ -18,37 +18,37 @@ public final class ThoughtsDBContract {
     public static final String PATH_THOUGHTS = "thoughts";
 
     // Inner class that defines the table used
-    public static final class Thoughts implements BaseColumns{
+    static final class Thoughts implements BaseColumns{
 
         /** Name of database table for thoughts */
-        public static final String TABLE_NAME = "Thoughts";
+        static final String TABLE_NAME = "Thoughts";
 
         /**
          * Unique ID number for the thought (only for use in the database table).
          *
          * Type: INTEGER
          */
-        public final static String _ID = BaseColumns._ID;
+        final static String _ID = BaseColumns._ID;
 
         /**
          * Limiting thought
          *
          * Type: TEXT
          */
-        public static final String COLUMN_LIMITING = "Limiting";
+        static final String COLUMN_LIMITING = "Limiting";
 
         /**
          * Growing thought
          *
          * Type: TEXT
          */
-        public static final String COLUMN_GROWING = "Growing";
+        static final String COLUMN_GROWING = "Growing";
 
         /**
          * Position on the list
          *
          * Type: INTEGER
          */
-        public static final String COLUMN_POSITION = "Position";
+        static final String COLUMN_POSITION = "Position";
     }
 }

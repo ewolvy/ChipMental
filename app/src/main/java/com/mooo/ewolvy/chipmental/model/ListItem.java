@@ -1,9 +1,9 @@
 package com.mooo.ewolvy.chipmental.model;
 
 public class ListItem {
-    String limiting;
-    String growing;
-    int position;
+    private String limiting;
+    private String growing;
+    private int position;
 
     public int getPosition() {
         return position;

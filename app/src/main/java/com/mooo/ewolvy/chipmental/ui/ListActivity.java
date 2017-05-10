@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.transition.Fade;
 import android.view.View;
+import android.widget.TextView;
 
 import com.mooo.ewolvy.chipmental.R;
 import com.mooo.ewolvy.chipmental.adapter.ChipAdapter;
@@ -49,8 +50,15 @@ public class ListActivity extends AppCompatActivity implements ChipAdapter.ItemC
         itemTouchHelper.attachToRecyclerView(recView);
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        ChipData.saveListData(listData, this);
+
+    }
+
     private ItemTouchHelper.Callback createHelperCallback(){
-        ItemTouchHelper.SimpleCallback simpleCallback =
+        return(
                 new ItemTouchHelper.SimpleCallback(ItemTouchHelper.UP | ItemTouchHelper.DOWN,
                         ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT){
                     @Override
@@ -65,17 +73,16 @@ public class ListActivity extends AppCompatActivity implements ChipAdapter.ItemC
                     public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
                         deleteItem(viewHolder.getAdapterPosition());
                     }
-                };
-        return simpleCallback;
+                });
     }
 
     private void moveItem (int oldPos, int newPos){
-        if (oldPos == newPos) {
-            return;
-        }
-        ListItem item = (ListItem) listData.get(oldPos);
+        ListItem itemMoved = (ListItem) listData.get(oldPos);
+        ListItem itemSwitched = (ListItem) listData.get(newPos);
+        itemMoved.setPosition(newPos);
+        itemSwitched.setPosition(oldPos);
         listData.remove(oldPos);
-        listData.add(newPos, item);
+        listData.add(newPos, itemMoved);
         adapter.notifyItemMoved(oldPos, newPos);
     }
 
@@ -101,9 +108,9 @@ public class ListActivity extends AppCompatActivity implements ChipAdapter.ItemC
             getWindow().setExitTransition(new Fade(Fade.OUT));
             ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
                     this,
-                    new Pair<View, String>(v.findViewById(R.id.txt_limitating),
+                    new Pair<>(v.findViewById(R.id.txt_limitating),
                             getString(R.string.transition_limiting)),
-                    new Pair <View, String>(v.findViewById(R.id.txt_growing),
+                    new Pair<>(v.findViewById(R.id.txt_growing),
                             getString(R.string.transition_growing))
             );
 

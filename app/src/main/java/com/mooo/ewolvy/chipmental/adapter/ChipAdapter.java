@@ -6,10 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.mooo.ewolvy.chipmental.R;
 import com.mooo.ewolvy.chipmental.model.ListItem;
-
 import java.util.List;
 
 public class ChipAdapter extends RecyclerView.Adapter<ChipAdapter.ChipHolder>{
@@ -56,7 +54,7 @@ public class ChipAdapter extends RecyclerView.Adapter<ChipAdapter.ChipHolder>{
         private TextView growing;
         private View container;
 
-        public ChipHolder(View itemView) {
+        ChipHolder(View itemView) {
             super(itemView);
 
             limiting = (TextView) itemView.findViewById(R.id.txt_limitating);
