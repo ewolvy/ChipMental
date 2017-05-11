@@ -3,4 +3,8 @@
     <string name="app_name">Chip mental</string>
     <string name="label_growing">Pensamiento de crecimiento</string>
     <string name="label_limiting">Pensamiento limitante</string>
+    <string name="save">Guardar</string>
+    <string name="discard">Descartar</string>
+    <string name="keep_editing">Seguir editando</string>
+    <string name="unsaved_changes_dialog_msg">¿Descartar los cambios y dejar de editar?</string>
 </resources>

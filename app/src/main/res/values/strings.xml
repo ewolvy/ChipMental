@@ -2,7 +2,10 @@
     <string name="app_name">Mental chip</string>
     <string name="label_limiting">Limiting thought</string>
     <string name="label_growing">Growing thought</string>
-
+    <string name="save">Save</string>
     <string name="transition_limiting" translatable="false">limiting</string>
     <string name="transition_growing" translatable="false">growing</string>
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+    <string name="discard">Discard</string>
+    <string name="keep_editing">Keep Editing</string>
 </resources>
