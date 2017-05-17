@@ -2,7 +2,6 @@ package com.mooo.ewolvy.chipmental.ui;
 
 import android.content.Intent;
 import android.os.Build;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.util.Pair;
@@ -13,11 +12,11 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.transition.Fade;
 import android.view.View;
+import android.support.design.widget.FloatingActionButton;
 import com.mooo.ewolvy.chipmental.R;
 import com.mooo.ewolvy.chipmental.adapter.ChipAdapter;
 import com.mooo.ewolvy.chipmental.model.ChipData;
 import com.mooo.ewolvy.chipmental.model.ListItem;
-
 import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity implements ChipAdapter.ItemClickCallback{
@@ -25,30 +24,33 @@ public class ListActivity extends AppCompatActivity implements ChipAdapter.ItemC
     private static final String LIMITING = "LIMITING";
     private static final String GROWING = "GROWING";
     private static final String BUNDLE_EXTRAS = "BUNDLE_EXTRAS";
+    private static final String POSITION = "POSITION";
 
-    private ChipAdapter adapter;
-    private ArrayList listData;
+    public static ChipAdapter adapter;
+    public static ArrayList listData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
+        // Setup FAB to open EditorActivity
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ListActivity.this, EditActivity.class);
-
+                Intent intent = new Intent(ListActivity.this, EditActivity.class);
                 Bundle extras = new Bundle();
                 extras.putString(LIMITING, "");
                 extras.putString(GROWING, "");
+                extras.putInt(POSITION, 0);
 
-                i.putExtra(BUNDLE_EXTRAS, extras);
+                intent.putExtra(BUNDLE_EXTRAS, extras);
 
-                startActivity(i);
+                startActivity(intent);
             }
         });
+
 
         listData = (ArrayList) ChipData.getListData(this);
 
@@ -68,7 +70,6 @@ public class ListActivity extends AppCompatActivity implements ChipAdapter.ItemC
     protected void onPause() {
         super.onPause();
         ChipData.saveListData(listData, this);
-
     }
 
     private ItemTouchHelper.Callback createHelperCallback(){
@@ -114,6 +115,7 @@ public class ListActivity extends AppCompatActivity implements ChipAdapter.ItemC
         Bundle extras = new Bundle();
         extras.putString(LIMITING, item.getLimiting());
         extras.putString(GROWING, item.getGrowing());
+        extras.putInt(POSITION, p);
 
         i.putExtra(BUNDLE_EXTRAS, extras);
 
