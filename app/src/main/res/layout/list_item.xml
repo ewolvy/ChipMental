@@ -1,40 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
-    android:gravity="center_vertical|start"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="64dp"
-    android:padding="8dp"
-    android:clickable="true"
-    android:background="#ffffffff"
-    android:foreground="?selectableItemBackground"
-    android:id="@+id/cont_item_root">
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="5"
-        android:textSize="18sp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="horizontal"
         android:gravity="center_vertical|start"
-        android:id="@+id/txt_limitating"
-        android:transitionName="@string/transition_limiting"
-        tools:text="Lorem Ipsum"/>
-    <ImageView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/im_arrow"
-        android:src="@drawable/ic_trending_flat_black_36dp"
-        android:contentDescription="@string/app_name"/>
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="5"
-        android:textSize="18sp"
-        android:gravity="center_vertical|end"
-        android:id="@+id/txt_growing"
-        android:transitionName="@string/transition_growing"
-        tools:text="Ipsum Lorem"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:clickable="true"
+        android:background="#ffffffff"
+        android:foreground="?selectableItemBackground"
+        android:id="@+id/cont_item_root"
+        android:focusable="true">
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#777777"
+            android:padding="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:gravity="center_vertical|start"
+            android:id="@+id/txt_limiting"
+            android:transitionName="@string/transition_limiting"
+            tools:text="Limiting thought"/>
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="16dp"
+            android:id="@+id/im_arrow"
+            android:src="@drawable/arrow"
+            android:contentDescription="@string/app_name"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#FF7700"
+            android:padding="8dp"
+            android:gravity="center_vertical|end"
+            android:id="@+id/txt_growing"
+            android:transitionName="@string/transition_growing"
+            tools:text="Growing thought"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="0dp"
+            android:background="@android:color/darker_gray"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="95"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="0dp"
+            android:background="@android:color/darker_gray"/>
+
+    </LinearLayout>
 </LinearLayout>

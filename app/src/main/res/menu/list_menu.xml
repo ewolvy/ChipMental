@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/list_new"
+        android:icon="@drawable/ic_add_white_36dp"
+        android:title="@string/add_thought"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/list_backup"
+        android:icon="@drawable/ic_save_white_36dp"
+        android:title="@string/do_backup"
+        app:showAsAction="never" />
+    <item android:id="@+id/list_restore"
+        android:icon="@drawable/ic_restore_white_36dp"
+        android:title="@string/restore_backup"
+        app:showAsAction="never" />
+</menu>

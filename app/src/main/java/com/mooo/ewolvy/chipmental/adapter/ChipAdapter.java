@@ -57,8 +57,8 @@ public class ChipAdapter extends RecyclerView.Adapter<ChipAdapter.ChipHolder>{
         ChipHolder(View itemView) {
             super(itemView);
 
-            limiting = (TextView) itemView.findViewById(R.id.txt_limitating);
-            growing = (TextView) itemView.findViewById(R.id.txt_growing);
+            limiting = itemView.findViewById(R.id.txt_limiting);
+            growing = itemView.findViewById(R.id.txt_growing);
             container = itemView.findViewById(R.id.cont_item_root);
             container.setOnClickListener(this);
         }

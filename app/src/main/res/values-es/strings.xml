@@ -7,4 +7,15 @@
     <string name="discard">Descartar</string>
     <string name="keep_editing">Seguir editando</string>
     <string name="unsaved_changes_dialog_msg">¿Descartar los cambios y dejar de editar?</string>
+    <string name="delete_confirmation_title">Borrar pensamiento</string>
+    <string name="delete_confirmation_message">¿Estás seguro/a que quieres eliminar este pensamiento?</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="add_thought">Añadir pensamiento</string>
+    <string name="do_backup">Hacer copia de seguridad</string>
+    <string name="restore_backup">Recuperar copia de seguridad</string>
+    <string name="no_media_message">No se puede realizar la copia de seguridad porque no hay ninguna SD instalada</string>
+    <string name="no_dir_message">No se puede realizar la copia de seguridad porque no se puede crear ni encontrar el directorio</string>
+    <string name="no_file_message">No se puede realizar la copia de seguridad porque no se puede crear el archivo</string>
+    <string name="no_restore_message">No se puede restaurar la copia de seguridad por problemas de archivo</string>
 </resources>

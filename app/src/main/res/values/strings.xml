@@ -8,4 +8,15 @@
     <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
     <string name="discard">Discard</string>
     <string name="keep_editing">Keep Editing</string>
+    <string name="delete_confirmation_title">Delete thought</string>
+    <string name="delete_confirmation_message">Are you sure to eliminate this thought?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="add_thought">Add thought</string>
+    <string name="do_backup">Do backup</string>
+    <string name="restore_backup">Restore backup</string>
+    <string name="no_media_message">Can\'t do backup because there is no SD card installed</string>
+    <string name="no_dir_message">Can\'t do backup because can\'t create nor find directory</string>
+    <string name="no_file_message">Can\'t do backup because can\'t create file</string>
+    <string name="no_restore_message">Can\'t do restore. File problems</string>
 </resources>

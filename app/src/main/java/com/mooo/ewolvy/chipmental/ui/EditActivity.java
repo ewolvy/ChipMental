@@ -2,17 +2,17 @@ package com.mooo.ewolvy.chipmental.ui;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
+
 import com.mooo.ewolvy.chipmental.R;
-import com.mooo.ewolvy.chipmental.model.ChipData;
 import com.mooo.ewolvy.chipmental.model.ListItem;
 
 import java.util.Objects;
@@ -58,6 +58,9 @@ public class EditActivity extends AppCompatActivity {
     private View.OnTouchListener mTouchListener = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View view, MotionEvent motionEvent) {
+            if (motionEvent.getAction() == MotionEvent.ACTION_DOWN) {
+                view.performClick();
+            }
             mThoughtHasChanged = true;
             return false;
         }
@@ -151,7 +154,7 @@ public class EditActivity extends AppCompatActivity {
             newItem.setPosition(ListActivity.listData.size() + 1);
             ListActivity.listData.add(newItem);
         }else{
-            ListItem oldItem = (ListItem) ListActivity.listData.get(mModifiedItem);
+            ListItem oldItem = ListActivity.listData.get(mModifiedItem);
             newItem.setPosition(oldItem.getPosition());
             ListActivity.listData.set(mModifiedItem, newItem);
         }
